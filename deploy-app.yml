@@ -1,0 +1,17 @@
+# create a GitHub Action to email a report from a file at 6am daily
+- name: Email report
+  uses: dawidd6/action-send-mail@v2
+  with:
+    server_address: smtp.gmail.com
+    server_port: 587
+    username: ${{ secrets.GMAIL_USERNAME }}
+    password: ${{ secrets.GMAIL_PASSWORD }}
+    subject: Report
+    body: |
+      Hi,
+
+      Please find the report attached.
+
+      Thanks,
+      John Doe
+    from: John Doe <
